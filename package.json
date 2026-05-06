@@ -1,0 +1,25 @@
+{
+  "name": "employee-management",
+  "version": "1.0.0",
+  "description": "Full-stack MERN Employee Management System",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "cd backend && node server.js",
+    "client": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "cd frontend && npm run build",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "keywords": [
+    "mern",
+    "employee-management",
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
