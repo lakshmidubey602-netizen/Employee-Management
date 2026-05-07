@@ -1,19 +1,16 @@
 const mongoose = require('mongoose');
 
 /**
- * Connect to MongoDB database
+ * Connect to MongoDB Atlas database
  */
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
-      // Mongoose 6+ handles these automatically, but keeping for clarity
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
-    });
+    const conn = await mongoose.connect(process.env.MONGO_URI);
 
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    console.log(`MongoDB Atlas Connected: ${conn.connection.host}`);
   } catch (error) {
-    console.error(`Error connecting to MongoDB: ${error.message}`);
+    console.error(`Error connecting to MongoDB Atlas: ${error.message}`);
+    console.error('Please check your MONGO_URI in the .env file');
     process.exit(1);
   }
 };
